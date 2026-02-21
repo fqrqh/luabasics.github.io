@@ -68,5 +68,9 @@ WaitForChild "Attendre que l'enfant soit chargé"
 ```
 
 
+# SERVER
+
+Pour les scripts serverside 
+
 
 
