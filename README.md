@@ -1,6 +1,6 @@
 # luabasic
 
-Une Documentation Personnalisée pour apprendre le Lua!
+
 
 # 1. Player
 
@@ -16,7 +16,7 @@ Ensuite pour avoir accès au LocalPlayer ainsi qu’au Character, vous devrez le
 
 ```bash
 local Player = Players.LocalPlayer
-et pour le character
+
 local character = Player.Character or Player.CharacterAdded:Wait()
 ```
 
@@ -27,15 +27,22 @@ local character = Player.Character or Player.CharacterAdded:Wait()
 Pour charger tous les services et modules, vous pouvez utiliser ce script dès le début de votre script : 
 
 ```bash
-local Players = game:GetService("Players")
+local Players = game:GetService("Players") -- CHARGE LES JOUEURS
 
-local Player = Players.LocalPlayer
-local Humanoid = Player:WaitForChild("Humanoid")
-local character = Player.Character or Player.CharacterAdded:Wait()
-local PlayerGui = Player:WaitForChild("PlayerGui")
+local Player = Players.LocalPlayer -- CHARGE LE JOUEUR LOCAL 
+
+local Humanoid = Player:WaitForChild("Humanoid") -- CHARGE LHUMANOID DU JOUEUR LOCAL
+
+
+local character = Player.Character or Player.CharacterAdded:Wait() -- CHARGE LE CHARACTER
+
+local PlayerGui = Player:WaitForChild("PlayerGui") -- CHARGE LE GUI DU JOUEUR (LE GUI CEST TOUJOURS EN LOCAL)
+
+
+-- LES AUTRES SERVICES --
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ServerStorage = game:GetService("ServerStorage")
-local ServerScriptService = game:GetService("ServerScriptService")
+local ServerStorage = game:GetService("ServerStorage") 
+local ServerScriptService = game:GetService("ServerScriptService") 
 local Workspace = game:GetService("Workspace")
 local Lighting = game:GetService("Lighting")
 local StarterGui = game:GetService("StarterGui")
@@ -47,8 +54,14 @@ local TextService = game:GetService("TextService")
 local uis = game:GetService("UserInputService")
 local Camera = workspace:WaitForChild("Camera")
 local TweenService = game:GetService("TweenService")
+-- LES AUTRES SERVICES --
 ```
 
+Pour avoir accès au descendant d'un modèle/objet, le meilleur moyen est de :
+```bash
+FindFirstChild "Cherche L'enfant primaire"
+WaitForChild "Attendre que l'enfant soit chargé"
 
+```
 
 
